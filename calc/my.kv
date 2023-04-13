@@ -1,24 +1,24 @@
 #:kivy 2.1.0
 
-<Button>:
-    background_color: (210/100, 43/100, 43/100, 1) if self.state == 'normal' else (0, 0.0, 0.0, 1.0)
+<Button>:  #wlasciwosci kazdego guzika tutaj
+    background_color: (210/100, 43/100, 43/100, 1) if self.state == 'normal' else (0, 0.0, 0.0, 1.0)    #mozesz wpisac sobie tylko background_color:, i tutaj kolor [uwaga, w kivy kolory musisz podzielic przez 255]
     font_size: 50
 
 <Kalkulator>:
-    orientation: "vertical"
+    orientation: "vertical"  #to ustawienie dotyczace boxlayoutu czyli tego jak sie ustawia to wszystko, czyli pionowo a nie poziomo jak jest domyslnie
     Label:
-        id: ekran
-        background_color: (96/255, 148/255, 114/255, 1)
-        size_hint: 1, 0.3
+        id: ekran  #mozesz to zmienic, ale bedziesz musiala zmienic potem funkcje w pythonie (zeby byl twoj id)
+        background_color: (96/255, 148/255, 114/255, 1) #kolor, mozesz sobie zmienic
+        size_hint: 1, 0.3 #czyli ile procentowo zajmuje miejsca, 1 to cala szerokosc, 0.3 to 30% wysokosci
         font_size: 50
-        canvas.before:
+        canvas.before:   #nie rozumiem do konca ale to robi prostokat taki kolorowy czaisz tam gdzie ma byc ekran
             Color:
                 rgba: self.background_color
             Rectangle:
                 size: self.size
                 pos: self.pos
 
-    GridLayout:
+    GridLayout: #ustawienie guzikow, ja tutaj akurat dalam 5x4, zeby dodac nawiasy modulo i czyszczenie
         rows: 5
         cols: 4
 
